@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Log in</title>
+        <link href="../styles/connexion.css"  rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <h1>Quiz Master</h1>
+        </header>
+
+        <main>
+            <h3>Connexion</h3>
+
+            <form method="POST" action="../php_database/connexion.php">
+
+                <input type="text" name="user" id="user" placeholder="Entrez nom d'utilisateur">
+
+                <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Entrez mot de passe">
+
+                <input type="submit" value="Envoyer">
+            </form>
+
+            <p>Pas de compte ? <a href="inscription.html">Inscrivez-vous</a></p>
+        </main>
+    </body>
+</html>

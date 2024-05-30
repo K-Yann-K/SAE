@@ -1,0 +1,81 @@
+*{margin: 0;}
+
+body{
+    background-image:url("../img/bg.webp");
+}
+
+nav, footer{
+    background-color:#f3f4ff ;
+}
+
+header{
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 10px;
+    margin:auto;
+}
+
+footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+
+footer section{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+img[alt="logo de quiz par freepik"]{
+width:50px;
+height: 50px;
+}
+
+nav img[alt="logo de paramètre par feen"]{
+    width:30px;
+    height: 30px;
+    }
+
+main{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    background-color: black;
+    width:730px;
+    height: 550px;
+    margin-top: 50px;
+    margin:auto;
+}
+
+a{
+    text-decoration: none;
+    color:#242424;
+}
+button{
+    margin-top: 10px;
+}
+
+h2{
+    color: #f3f4ff;
+    margin-bottom: 10px;
+}
+.fleche{
+    width:30px;
+    height: 50px;
+    margin-top: 50px;
+    background-color: #f3f4ff;
+    border-radius: 15px;
+}

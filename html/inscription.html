@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Inscription</title>
+        <link href="../styles/inscription.css"  rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <h1>Quiz Master</h1>
+        </header>
+
+        <main>
+            <h3>Inscription</h3>
+
+            <form method="POST" action="../php_database/inscription.php">
+                <div>
+                    <article>
+                        <label for="nom">Votre nom</label>
+                        <input type="text" name="nom" id="nom" placeholder="Entrez nom">
+                    </article>
+
+                    <article class="donnée_seconde">
+                        <label for="prenom">Votre prénom</label>
+                        <input type="text" name="prenom" id="prenom" placeholder="Entrez prénom">
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <label for="nom_d'utilisateur">Votre nom d'utilisateur</label>
+                        <input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" placeholder="Entrez nom d'utilisateur">
+                    </article>
+
+                    <article class="donnée_seconde">
+                        <label for="mot_de_passe">Votre mot de passe</label>
+                        <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Entrez mot de passe">
+                    </article>
+                </div>
+                <input type="submit" value="Envoyer">
+            </form>
+        </main>
+    </body>
+
+</html>

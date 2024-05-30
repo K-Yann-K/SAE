@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil - Quiz Master</title>
+        <link href="../styles/style.css"  rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <img src="../img/quiz.png" alt="logo de quiz par freepik">
+                <a href="Acceuil.html"><h1>Quiz Master</h1></a>
+                <a href="paramètre.html"><img src="../img/parametres.png" alt="logo de paramètre par feen"></a>
+                <!--ajouter potentiellement une section-->
+            </nav>
+        </header>
+
+        <aside><!--Message de bienvenu une fois connecté--></aside>
+
+        <main>
+            <h3>Bienvenue</h3>
+
+            <section class="categorie">
+                <article>
+                    <h5>Connexion</h5>
+                    <form method="POST" action="../php_database/connexion.php">
+                        <label for="nom_utilisateur">Nom D'Utilisateur</label>
+                        <input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" placeholder="Entrez votre nom d'utilisateur">
+        
+                        <label for="mot de passe">Mot de passe</label>
+                        <input type="password" name="mot de passe" id="mot de passe" placeholder="Entrez votre mot de passe">
+        
+                        <input type="submit" value="Envoyer">
+                    </form>
+                </article>
+
+                <table>
+                    <tr>
+                        <td><a href="https://neko-sama.fr">                   
+                            <h5>Musique</h5>
+                            <p>Testez-vos connaissances musicales et ce, peu importe le type</p>
+                        </a></td>
+                        <td>
+                            <h5>Histoire</h5>
+                            <p>Testez-vos connaissances en histoire et ce, peu importe l'époque</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>sport</h5>
+                            <p>Testez-vos connaissances sur le sport, les exploits de cette matière et ceux qui la représentent</p>
+                        </td>
+                        <td>                   
+                            <h5>Scolaire</h5>
+                            <p>etes-vous un bon élève ?</p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <img src="../img/quiz.png" alt="logo de quiz par freepik">
+
+            <section>
+                <a href="https://www.linkedin.com/in/yannick-khamis-7b48142b6/"><p>étudiant Yannick Khamis</p></a>
+                    
+                <a href="https://www.linkedin.com/in/lydia-akmoussi-9b2619258/"><p>étudiante Lydio Akmousso</p></a>
+
+                <a href="https://www.linkedin.com/in/slimane-ainouz-6a2309268/"><p>WatiBg Slimane Ainouz</p></a>
+            </section>
+        </footer>
+    </body>
+
+</html>

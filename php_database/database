@@ -1,0 +1,54 @@
+DROP TABLE IF EXISTS quiz, categories, answers, question;
+
+CREATE TABLE categories (
+    category VARCHAR(128) NOT NULL,
+    PRIMARY KEY (category)
+);
+
+
+INSERT INTO categories VALUES('Musique');
+INSERT INTO categories VALUES('Histoire');
+INSERT INTO categories VALUES('Astronomie');
+INSERT INTO categories VALUES('Sport');
+INSERT INTO categories VALUES('Scolaire');
+INSERT INTO categories VALUES('League of Legends');
+
+
+CREATE TABLE question (
+    id SERIAL,
+    category VARCHAR(128) NOT NULL,
+    statement TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE question ADD FOREIGN KEY (category) REFERENCES categories(category);
+
+CREATE TABLE answers (
+    statement TEXT NOT NULL,
+    answer_1 VARCHAR(128) NOT NULL,
+    answer_2 VARCHAR(128) NOT NULL,
+    answer_3 VARCHAR(128) NOT NULL,
+    answer_4 VARCHAR(128) NOT NULL,
+    PRIMARY KEY (statement)
+);
+
+ALTER TABLE answers ADD FOREIGN KEY (statement) REFERENCES question(statement);
+
+INSERT INTO answers VALUES ('En combien de temps Jupiter met-il de temps à faire un tour complet autour du soleil ?', '4 ans','8 ans','10 ans','12 ans');
+
+
+CREATE TABLE quiz (
+    id int NOT NULL primary key AUTO_INCREMENT,
+    question VARCHAR(128) NOT NULL,
+    choix_1 VARCHAR(128) NOT NULL,
+    choix_2 VARCHAR(128) NOT NULL,
+    choix_3 VARCHAR(128) NOT NULL,
+    choix_4 VARCHAR(128) NOT NULL,
+    reponse VARCHAR(128) NOT NULL,
+
+);
+
+
+INSERT INTO quiz VALUES ('En combien de temps Jupiter met-il de temps à faire un tour complet autour du soleil ?', '4 ans','8 ans','10 ans','12 ans','12 ans');
+INSERT INTO quiz VALUES ("Laquelle de ces planètes n'est pas tellurique ?", 'Mercure','Terre','Uranus','Vénus','Uranus');
+INSERT INTO quiz VALUES ("Combien de temps dure un cycle lunaire ?", '27,5 jours','29,5 jours','31,5 jours',"ça dépend si c'est une année bissextile",'29,5 jours');
