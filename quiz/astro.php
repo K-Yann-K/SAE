@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<?php 
+
+$bd = new mysqli("localhost", "root", "", "sae_database_connexion");
+$bd->query("SET nameS 'utf8'");
+
+if($bd->connect_error){
+    die("non connecté: ".$bd->connect_error);
+}
+
+$requete =mysqli_query( $bd, "SELECT * FROM quiz");
+?>
+
 <html lang="fr">
 
     <head>
@@ -18,25 +30,49 @@
             <!--ajouter potentiellement une section-->
         </nav>
 
+        
+
         <main>
-            <header>
-                <h2 class="title"> QuizzItium Thème Informatique </h2>
-                <span class="sous_title"> Il y a <span class="nbrQuestion"> ?? </span> Questions </span>
+            <header id="en_tete" class="en_tete">
+                <h2 class="titre"> QuizzItium Thème Informatique </h2>
+                <p class="sous_titre"> Il y a <span class="nbrQuestion"> ?? </span> Questions </p>
                 <div>
                     <button id="bouton" class="start"> Commencer </button>
                 </div>
             </header>
 
-            <section class="proposition">
+           <!-- <section id="proposition" class="proposition">
                 <div>
 
                 </div>
             </section>
 
-            <div id="result_screen" class="result_screen">
+            <div id="resultat" class="resultat">
                 <h3 class=""> Résultat </h3>
                 <span class=""> Vous avez <span id="nbrCorrects"> ?? </span> réponses correctes sur <span class="nbrQuestion"> ?? </span> </span>
-            </div>
+            </div> -->
+
+            <?php 
+                if(mysqli_num_rows($requete)>0){
+                    while($tab=mysqli_fetch_array($requete)){
+                        echo "<header id='en_tete_".$tab['id']." class='en_tete_".$tab['id'].">";
+                        echo "<h2>".$tab['question']."</h2>";
+                        echo $tab['id']." / 10";
+                        echo "<section>";
+                        echo "<button id='btn_1' class='btn_1'>".$tab["choix_1"]."</button>";
+                        echo "<button id='btn_2' class='btn_2'>".$tab["choix_2"]."</button>";
+                        echo "<button id='btn_3' class='btn_3'>".$tab["choix_3"]."</button>";
+                        echo "<button id='btn_4' class='btn_4'>".$tab["choix_4"]."</button>";
+                        echo "</section>";
+                        echo "</header>";
+                    }
+                    
+                    echo "<button id='next_btn' class='nextQuestion'>Prochaine Question</button>";
+                }
+
+            
+            
+            ?>
 
         </main>
 
