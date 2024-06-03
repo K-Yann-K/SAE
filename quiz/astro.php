@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-$bd = new mysqli("localhost", "root", "", "sae_database_connexion");
+$bd = new mysqli("localhost", "root", "", "sae_database");
 $bd->query("SET nameS 'utf8'");
 
 if($bd->connect_error){
@@ -20,6 +20,7 @@ $requete =mysqli_query( $bd, "SELECT * FROM quiz");
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     
     <body>
@@ -34,7 +35,7 @@ $requete =mysqli_query( $bd, "SELECT * FROM quiz");
 
         <main>
             <header id="en_tete" class="en_tete">
-                <h2 class="titre"> QuizzItium Thème Informatique </h2>
+                <h2 class="titre"> Quizz Master Thème Informatique </h2>
                 <p class="sous_titre"> Il y a <span class="nbrQuestion"> ?? </span> Questions </p>
                 <div>
                     <button id="bouton" class="start"> Commencer </button>
@@ -54,8 +55,11 @@ $requete =mysqli_query( $bd, "SELECT * FROM quiz");
 
             <?php 
                 if(mysqli_num_rows($requete)>0){
+                    echo "<script> require('../script/astro.js')";
+                    echo "while (compteur != 1){}";
+                    echo "<section id='proposition' class='proposition'>";
                     while($tab=mysqli_fetch_array($requete)){
-                        echo "<header id='en_tete_".$tab['id']." class='en_tete_".$tab['id'].">";
+                        /*echo "<header id='en_tete_".$tab['id']." class='en_tete_".$tab['id'].">";*/
                         echo "<h2>".$tab['question']."</h2>";
                         echo $tab['id']." / 10";
                         echo "<section>";
@@ -65,13 +69,15 @@ $requete =mysqli_query( $bd, "SELECT * FROM quiz");
                         echo "<button id='btn_4' class='btn_4'>".$tab["choix_4"]."</button>";
                         echo "</section>";
                         echo "</header>";
+                        echo "<script> import { compteur } from '../script/astro.js'";
+                        echo "while (compteur !=".($tab+1)."){}";
                     }
                     
                     echo "<button id='next_btn' class='nextQuestion'>Prochaine Question</button>";
+
+                    echo"</section>";
                 }
 
-            
-            
             ?>
 
         </main>
